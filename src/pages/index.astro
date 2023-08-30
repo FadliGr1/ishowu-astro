@@ -92,13 +92,13 @@ import Faq from "../components/Faq.astro";
           title={[
             {
               name: "Devon Lane",
-              testimonial: "Lorem ipsum dolor sit amet consectetur. Eget lacinia eu nunc consequat lacinia id scelerisque. Molestie ut mattis in dolor ut ut sit in nullam. Risus vitae donec.",
+              testimonial: "Aaron Marshall is an outstanding Elementor expert. They turned my vision into an amazing website that performs beyond expectations. Highly recommended!",
               image: "./testimonial/testimonial-1.png",
               website: "spaced.uk",
             },
             {
               name: "Kristin Watson",
-              testimonial: "Lorem ipsum dolor sit amet consectetur. Eget lacinia eu nunc consequat lacinia id scelerisque. Molestie ut mattis in dolor ut ut sit in nullam. Risus vitae donec.",
+              testimonial: "Working with Aaron Marshall was a game-changer. Their Elementor skills transformed my site, exceeding all my design and performance goals.",
               image: "./testimonial/testimonial-2.png",
               website: "spaced.uk",
             },
@@ -163,15 +163,17 @@ import Faq from "../components/Faq.astro";
   <section class="contact py-5 bg-white">
     <div class="container">
       <div class="row">
-        <div class="col px-5">
-          <div class="card contact-card border-0">
+        <div class="col px-lg-5">
+          <div class="card contact-card border-0 p-lg-0 p-3">
             <div class="row">
-              <div class="col-4">
+              <div class="col-4 d-none d-md-block">
                 <img src="./contact-man.png" class="img-fluid" alt="" />
               </div>
-              <div class="col-8 py-5">
+              <div class="col-lg-8 col-12 py-lg-5">
                 <p class="contact-description">Ready to create your next amazing product?</p>
-                <button class="btn btn-contact">Let's Talk</button>
+                <div class="d-flex justify-content-lg-start justify-content-center">
+                  <button class="btn btn-contact">Let's Talk</button>
+                </div>
               </div>
             </div>
           </div>
@@ -252,6 +254,9 @@ import Faq from "../components/Faq.astro";
 
   /* mobile */
   @media only screen and (max-width: 700px) {
+    .hero-section {
+      height: 100%;
+    }
     .hero-img {
       width: 75%;
     }
@@ -268,6 +273,16 @@ import Faq from "../components/Faq.astro";
     .hero-email {
       font-size: 18px;
       line-height: 28px;
+    }
+
+    .contact-description {
+      font-size: 20px;
+      line-height: 28px;
+    }
+
+    .btn-contact {
+      font-size: 14px;
+      line-height: 24px;
     }
   }
 </style>
