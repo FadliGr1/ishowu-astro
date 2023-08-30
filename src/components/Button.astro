@@ -5,13 +5,14 @@ interface Props {
   link: string;
   bg: string;
   download: string;
+  alt: string;
 }
 
-const {text, icon, link, bg, download} = Astro.props;
+const {text, icon, link, bg, download, alt} = Astro.props;
 ---
 
 <a href={link} class={bg} {download}>
-  <img src={icon} alt={text} class="me-1" />
+  <img src={icon} alt={alt} class="me-1" />
   {text}
 </a>
 

@@ -1,0 +1,74 @@
+---
+interface Props {
+  title: {
+    id: string;
+    title: string;
+    description: string;
+  };
+}
+
+const {title} = Astro.props;
+---
+
+<div class="accordion accordion-flush" id="accordionFlushExample">
+  {
+    title.map((item) => (
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#${item.id}`} aria-expanded="false" aria-controls={item.id}>
+            {item.title}
+          </button>
+        </h2>
+        <div id={item.id} class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">{item.description}</div>
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .accordion-header button {
+    color: var(--gray-500);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px; /* 155.556% */
+  }
+
+  .accordion-body {
+    color: var(--gray-700);
+    text-align: justify;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+  }
+
+  .accordion-button:not(.collapsed) {
+    color: var(--brand);
+    background-color: #fff !important;
+    box-shadow: none !important;
+  }
+
+  .accordion-button:focus {
+    border-color: #fff;
+    box-shadow: none !important;
+  }
+
+  .accordion-button::after {
+    flex-shrink: 0;
+    width: var(--bs-accordion-btn-icon-width);
+    height: var(--bs-accordion-btn-icon-width);
+    margin-left: auto;
+    content: "";
+    background-image: url(../../public/icon-plus.svg);
+    background-repeat: no-repeat;
+    background-size: var(--bs-accordion-btn-icon-width);
+    transition: var(--bs-accordion-btn-icon-transition);
+  }
+  .accordion-button:not(.collapsed)::after {
+    background-image: url(../../public/icon-min.svg);
+    transform: var(--bs-accordion-btn-icon-transform);
+  }
+</style>

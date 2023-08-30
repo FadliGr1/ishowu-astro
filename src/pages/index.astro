@@ -1,7 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Button from "../components/Button.astro";
-import Companies from "../components/Companies.astro";
+import Portfolio from "../components/Portfolio.astro";
+import Title from "../components/Title.astro";
+import Testimonial from "../components/Testimonial.astro";
+import Faq from "../components/Faq.astro";
 ---
 
 <Layout title="FadliGr - Web Developer">
@@ -15,7 +18,7 @@ import Companies from "../components/Companies.astro";
           <a href="mailto:fadligrr@gmail.com" class="hero-email">sayhai@aaroon.com</a>
           <div class="row mt-5">
             <div class="col">
-              <Button text="Download CV" link="/assets/cv.pdf" bg="btn btn-brand-md d-flex align-items-center" download="download" icon="/file-download.svg" />
+              <Button text="Download CV" alt="Download CV" link="/assets/cv.pdf" bg="btn btn-brand-md d-flex align-items-center" download="download" icon="/file-download.svg" />
             </div>
           </div>
         </div>
@@ -25,16 +28,41 @@ import Companies from "../components/Companies.astro";
       </div>
     </div>
   </section>
-  <section class="portfolio py-5">
+  <section class="companies py-5 bg-white">
+    <div class="container">
+      <div class="row px-5 pb-3">
+        <div class="col">
+          <p class="companies-text">Companies I work with</p>
+        </div>
+      </div>
+      <div class="row d-flex align-items-center px-5">
+        <div class="col-lg col-4 mt-lg-0 mt-2">
+          <img src="/companies/adverus.png" alt="" class="img-fluid" />
+        </div>
+        <div class="col-lg col-4 mt-lg-0 mt-2">
+          <img src="/companies/manter.png" alt="" class="img-fluid" />
+        </div>
+        <div class="col-lg col-4 mt-lg-0 mt-2">
+          <img src="/companies/spaced.png" alt="" class="img-fluid" />
+        </div>
+        <div class="col-lg col-4 mt-lg-0 mt-2">
+          <img src="/companies/stamps.png" alt="" class="img-fluid" />
+        </div>
+        <div class="col-lg col-4 mt-lg-0 mt-2">
+          <img src="/companies/venuer.png" alt="" class="img-fluid" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="portfolio py-5 bg-white">
     <div class="container">
       <div class="row">
         <div class="col">
-          <p class="text-center portfolio-text">My Masterpiece</p>
-          <h2 class="text-center portfolio-title">I love to show you my work</h2>
+          <Title title="I love to show you my work" description="My Masterpiece" />
         </div>
       </div>
       <div class="row mt-3">
-        <Companies
+        <Portfolio
           title={[
             {text: "SoulMe", description: "Yoga Meditation Elementor Template Kit", license: "Commercial License", image: "/portfolio/soulme.png", link: "/"},
             {text: "Beu", description: "Music library streaming UI Kit", license: "Personal License", image: "/portfolio/beu.png", link: "/"},
@@ -45,11 +73,119 @@ import Companies from "../components/Companies.astro";
           ]}
         />
       </div>
+      <div class="row">
+        <div class="col d-flex justify-content-center">
+          <Button text="Load More" link="/portfolio" bg="btn btn-brand-md d-flex align-items-center" icon="" alt="" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="testimonial py-5 bg-white">
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-7 col-12">
+          <Title title="People I’ve helped to solve their problem" description="Trusted Testimonial " />
+        </div>
+      </div>
+      <div class="row mt-3">
+        <Testimonial
+          title={[
+            {
+              name: "Devon Lane",
+              testimonial: "Lorem ipsum dolor sit amet consectetur. Eget lacinia eu nunc consequat lacinia id scelerisque. Molestie ut mattis in dolor ut ut sit in nullam. Risus vitae donec.",
+              image: "./testimonial/testimonial-1.png",
+              website: "spaced.uk",
+            },
+            {
+              name: "Kristin Watson",
+              testimonial: "Lorem ipsum dolor sit amet consectetur. Eget lacinia eu nunc consequat lacinia id scelerisque. Molestie ut mattis in dolor ut ut sit in nullam. Risus vitae donec.",
+              image: "./testimonial/testimonial-2.png",
+              website: "spaced.uk",
+            },
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+  <section class="faq py-5 bg-white">
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col">
+          <Title title="Frequently asked questions" description="FAQ" />
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center mt-3">
+        <div class="col-lg-10 col-12">
+          <Faq
+            title={[
+              {
+                title: "How much your fixed price service?",
+                description:
+                  "Our fixed price service comes with a transparent and upfront pricing structure. The cost depends on the specific service you require. To get a precise quote, kindly reach out to our team with details about your project. We're committed to offering competitive rates for the value we deliver.",
+                id: "1",
+              },
+              {
+                title: "Can I avail your services on an hourly basis?",
+                description:
+                  "Yes, we offer the flexibility of hourly services. This is particularly beneficial for tasks that require a shorter timeframe or for ongoing assistance. Feel free to discuss your requirements with us, and we'll be glad to provide you with the hourly rates and any additional information you need.",
+                id: "2",
+              },
+              {
+                title: "Is Payoneer an accepted payment method?",
+                description:
+                  "Yes, we do accept payments via Payoneer. We understand the importance of providing diverse payment options for our clients. Payoneer offers a convenient way to process payments securely, allowing you to engage our services seamlessly.",
+                id: "3",
+              },
+              {
+                title: "Do you issue invoices for the work done?",
+                description:
+                  "Absolutely, we prioritize transparency in our transactions. We provide detailed invoices for all the work completed, including a breakdown of services, costs, and any applicable taxes. This ensures that you have a clear overview of the work done and the associated charges.",
+                id: "4",
+              },
+              {
+                title: "Which application do you use for client meetings?",
+                description:
+                  "For client meetings, we utilize [mention the application's name, e.g., Zoom, Microsoft Teams, etc.]. This platform ensures a seamless and interactive communication experience. We're open to accommodating your preferred platform for meetings as well.",
+                id: "5",
+              },
+              {
+                title: "Does the package include Elementor Pro?",
+                description:
+                  "Yes, our package includes Elementor Pro, a powerful and versatile page builder for WordPress. Elementor Pro empowers you to create stunning and dynamic websites with ease. It's a valuable tool that comes integrated with our package to enhance your web development experience.",
+                id: "6",
+              },
+            ]}
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="contact py-5 bg-white">
+    <div class="container">
+      <div class="row">
+        <div class="col px-5">
+          <div class="card contact-card border-0">
+            <div class="row">
+              <div class="col-4">
+                <img src="./contact-man.png" class="img-fluid" alt="" />
+              </div>
+              <div class="col-8 py-5">
+                <p class="contact-description">Ready to create your next amazing product?</p>
+                <button class="btn btn-contact">Let's Talk</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </Layout>
 
 <style>
+  .hero-section {
+    height: 90vh;
+  }
+
   .hero-title {
     color: var(--gray-900);
     font-size: 88px;
@@ -76,20 +212,42 @@ import Companies from "../components/Companies.astro";
     font-weight: 700;
     line-height: 38px;
   }
-  .portfolio-text {
-    color: var(--brand);
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 26px; /* 162.5% */
-    text-transform: capitalize;
-  }
-  .portfolio-title {
-    color: var(--gray-900);
-    font-size: 60px;
+
+  .companies-text {
+    color: var(--gray-700);
+    font-size: 28px;
     font-style: normal;
     font-weight: 700;
-    line-height: 70px; /* 116.667% */
+    line-height: 38px; /* 135.714% */
+  }
+
+  .contact-card {
+    background-color: var(--brand);
+    border-radius: 24px;
+  }
+
+  .contact-description {
+    color: #fbfaff;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px;
+  }
+
+  .btn-contact {
+    padding: 14px 32px;
+    border-radius: 12px;
+    background: #fff;
+    color: var(--brand);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px; /* 155.556% */
+    text-transform: capitalize;
+  }
+  .btn-contact:hover {
+    background: var(--brand-light);
+    color: var(--brand);
   }
 
   /* mobile */
@@ -110,10 +268,6 @@ import Companies from "../components/Companies.astro";
     .hero-email {
       font-size: 18px;
       line-height: 28px;
-    }
-
-    .portfolio-title {
-      font-size: 28px;
     }
   }
 </style>

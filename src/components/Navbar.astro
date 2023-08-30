@@ -19,7 +19,7 @@ const {title} = Astro.props;
         {
           title.map((item) => (
             <li class="nav-item">
-              <a class="nav-link mx-3" aria-current="page" href={item.link}>
+              <a class="nav-link mx-3 d-flex align-items-center" aria-current="page" href={item.link}>
                 {item.title}
               </a>
             </li>
@@ -28,7 +28,7 @@ const {title} = Astro.props;
       </ul>
       <div class="social-media d-flex justify-content-center">
         <a href="">
-          <ion-icon name="logo-tiktok"></ion-icon>
+          <ion-icon name="logo-twitter"></ion-icon>
         </a>
         <a href="">
           <ion-icon name="logo-facebook"></ion-icon>
@@ -55,17 +55,28 @@ const {title} = Astro.props;
 
   .nav-link:hover {
     color: var(--brand) !important;
-    scale: 1.01;
   }
 
   .active {
     color: var(--brand) !important;
-    font-weight: 600 !important;
+    font-weight: 500 !important;
+    position: relative;
+  }
+
+  .active::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    align-content: center !important;
+    display: inline-block;
+    background-image: url("./nav-active.svg") !important;
+    background-size: cover;
+    margin-right: 5px;
   }
 
   ion-icon {
     color: #807d8a;
-    background-color: #fff;
+    background-color: var(--gray-100);
     border-radius: 50%;
     border: 1px solid #807d8a !important;
     padding: 5px;
