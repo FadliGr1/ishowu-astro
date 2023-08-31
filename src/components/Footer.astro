@@ -1,0 +1,134 @@
+---
+import Button from "./Button.astro";
+---
+
+<footer class="footer px-lg-5 py-lg-5 px-2 py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-12">
+        <img src="./logo-light.svg" alt="" class="img-fluid" />
+        <p class="footer-text mt-3 mb-5">Lorem ipsum dolor sit amet consectetur. Nam sed sagittis penatibus neque sed.</p>
+        <div class="social-media d-flex justify-content-start">
+          <a href="">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a>
+          <a href="">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a>
+          <a href="">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="">
+            <ion-icon name="logo-github"></ion-icon>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-5 mt-lg-0 mt-3">
+        <div class="footer-link">
+          <ul class="list-group">
+            <li class="list-group-item link-head">about me</li>
+            <li class="list-group-item">
+              <a href="" class="link-item"> Certificates</a>
+            </li>
+            <li class="list-group-item">
+              <a href="" class="link-item"> Experiences</a>
+            </li>
+            <li class="list-group-item">
+              <a href="" class="link-item"> Award</a>
+            </li>
+            <li class="list-group-item">
+              <a href="" class="link-item"> Winners</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-3 col-7 mt-lg-0 mt-3">
+        <div class="footer-link">
+          <ul class="list-group">
+            <li class="list-group-item link-head">Agreements</li>
+            <li class="list-group-item">
+              <a href="" class="link-item">Licenses</a>
+            </li>
+            <li class="list-group-item">
+              <a href="" class="link-item">Terms & Conditions</a>
+            </li>
+            <li class="list-group-item">
+              <a href="" class="link-item">Privacy Policy</a>
+            </li>
+            <li class="list-group-item">
+              <a href="" class="link-item">for Commercial</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-3 col-12">
+        <p class="link-head mt-2">Newsletter</p>
+        <form action="" class="row mt-3 px-lg-0 px-3">
+          <input type="email" name="email" id="" class="form-control" placeholder="Enter your email address" />
+          <Button text="Subscribe Now" link="" bg="btn btn-subscribe col-12 mt-2" icon="" alt="" />
+        </form>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: var(--gray-900) !important;
+  }
+  .footer-text {
+    color: var(--gray-500);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px; /* 162.5% */
+  }
+
+  ion-icon {
+    color: #807d8a;
+    background-color: var(--gray-900);
+    border-radius: 50%;
+    border: 1px solid #807d8a !important;
+    padding: 5px;
+    font-size: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+
+  ion-icon:hover {
+    color: #fff !important;
+    border: none !important;
+    border: 1px solid !important;
+    border-color: var(--brand) !important;
+    background-color: var(--brand);
+    scale: 1.2 !important;
+  }
+
+  .list-group .list-group-item {
+    background-color: var(--gray-900) !important;
+    border: none;
+  }
+
+  .link-head {
+    color: var(--brand) !important;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 171.429% */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .link-item {
+    color: var(--gray-500) !important;
+  }
+
+  .link-item:hover {
+    color: var(--brand) !important;
+  }
+  .form-control {
+    padding: 11px 16px !important;
+    border-radius: 12px !important;
+  }
+</style>
